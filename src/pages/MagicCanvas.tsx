@@ -3,6 +3,7 @@ import { Camera, MessageSquare } from 'lucide-react';
 
 // Simple approximation of the MagicCanvas for demo purposes
 const MagicCanvasDemo = () => {
+  // you'll need to grab images from the Claude UI and publish them to a public URL
   const [image, setImage] = useState('https://placehold.co/800x600');
   const [regions, setRegions] = useState([]);
   const [activeRegion, setActiveRegion] = useState(null);
