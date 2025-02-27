@@ -2,6 +2,8 @@
 
 A React application with React Router, bootstrapped with Vite, TypeScript, and Tailwind CSS.
 
+![alt text](image.png)
+
 ## Getting Started
 
 First, install the dependencies:
