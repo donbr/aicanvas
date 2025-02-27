@@ -130,12 +130,12 @@ const TemporalGraphExplorer = () => {
   const currentTimelinePoint = timelineData.find(item => item.timestamp === currentTime) || {};
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
+    <div className="flex flex-col h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 shadow-md">
+      <header className="dark:bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">Temporal Graph Explorer</h1>
-          <div className="px-4 py-2 bg-white bg-opacity-20 rounded">
+          <div className="px-4 py-2 bg-white dark:bg-gray-800 bg-opacity-20 rounded">
             {formatDate(currentTime)}
           </div>
         </div>
@@ -144,7 +144,7 @@ const TemporalGraphExplorer = () => {
       {/* Main Content */}
       <div className="flex flex-1 overflow-hidden">
         {/* Left sidebar */}
-        <div className="w-64 bg-white shadow-md p-4 flex flex-col overflow-auto">
+        <div className="w-64 bg-white dark:bg-gray-800 shadow-md p-4 flex flex-col overflow-auto">
           <h2 className="text-lg font-semibold mb-4">Filters</h2>
           
           <div className="mb-4">
@@ -186,7 +186,7 @@ const TemporalGraphExplorer = () => {
         {/* Main Panel */}
         <div className="flex-1 flex flex-col">
           {/* Timeline control */}
-          <div className="bg-white border-b p-4 flex items-center space-x-4">
+          <div className="bg-white dark:bg-gray-800 border-b dark:border-gray-700 p-4 flex items-center space-x-4">
             <button 
               onClick={() => setIsPlaying(!isPlaying)}
               className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
@@ -222,9 +222,9 @@ const TemporalGraphExplorer = () => {
                 <div className="text-lg">Loading graph data...</div>
               </div>
             ) : (
-              <div className="bg-white rounded-lg shadow-md p-4 h-full relative">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 h-full relative">
                 {/* Graph metadata */}
-                <div className="absolute top-4 left-4 bg-white bg-opacity-80 p-2 rounded shadow-sm z-10">
+                <div className="absolute top-4 left-4 bg-white dark:bg-gray-800 bg-opacity-80 p-2 rounded shadow-sm z-10">
                   <div className="text-sm"><strong>Nodes:</strong> {currentTimelinePoint.nodeCount || 0}</div>
                   <div className="text-sm"><strong>Edges:</strong> {currentTimelinePoint.edgeCount || 0}</div>
                   <div className="text-sm"><strong>Changes:</strong> {currentTimelinePoint.changes || 0}</div>
@@ -316,7 +316,7 @@ const TemporalGraphExplorer = () => {
                 </div>
                 
                 {/* Legend */}
-                <div className="absolute bottom-4 left-4 bg-white p-2 rounded shadow-sm">
+                <div className="absolute bottom-4 left-4 dark:bg-gray-800 bg-white p-2 rounded shadow-sm">
                   <div className="text-sm font-medium mb-1">Node Types</div>
                   <div className="flex flex-col space-y-1">
                     <div className="flex items-center">
@@ -343,7 +343,7 @@ const TemporalGraphExplorer = () => {
         </div>
         
         {/* Right Sidebar - Details Panel */}
-        <div className="w-72 bg-white shadow-md p-4 overflow-auto">
+        <div className="w-72 bg-white dark:bg-gray-800 shadow-md p-4 overflow-auto">
           {selectedNode ? (
             // Node details panel
             <div>
@@ -404,9 +404,9 @@ const TemporalGraphExplorer = () => {
           ) : (
             // LLM query panel (simplified)
             <div>
-              <h2 className="text-lg font-semibold mb-4">AI Assistant</h2>
+              <h2 className="text-lg dark:bg-gray-800 font-semibold mb-4">AI Assistant</h2>
               
-              <div className="bg-blue-50 p-3 rounded mb-4">
+              <div className="bg-blue-50 dark:bg-gray-800 p-3 rounded mb-4">
                 <p className="text-sm">Ask me anything about the graph data!</p>
                 <ul className="text-xs text-gray-600 mt-2 ml-4 list-disc">
                   <li>Analyze temporal patterns</li>
@@ -419,13 +419,13 @@ const TemporalGraphExplorer = () => {
               <div className="mb-4">
                 <div className="text-sm mb-2 font-medium">Suggested Questions</div>
                 <div className="space-y-2">
-                  <div className="bg-gray-100 text-xs p-2 rounded cursor-pointer hover:bg-gray-200">
+                  <div className="bg-gray-100 dark:bg-gray-800 text-xs p-2 rounded cursor-pointer hover:bg-gray-200">
                     How has the graph evolved over time?
                   </div>
-                  <div className="bg-gray-100 text-xs p-2 rounded cursor-pointer hover:bg-gray-200">
+                  <div className="bg-gray-100 dark:bg-gray-800 text-xs p-2 rounded cursor-pointer hover:bg-gray-200">
                     What connections exist between John and the Website Redesign project?
                   </div>
-                  <div className="bg-gray-100 text-xs p-2 rounded cursor-pointer hover:bg-gray-200">
+                  <div className="bg-gray-100 dark:bg-gray-800 text-xs p-2 rounded cursor-pointer hover:bg-gray-200">
                     Which month had the most significant changes?
                   </div>
                 </div>
